@@ -21,7 +21,7 @@ public class Car implements Serializable {
     private Long idCar;
     private String name;
     private String brand;
-    private Integer year;
+    private Integer yea;
     private String description;
 
     @ManyToOne
