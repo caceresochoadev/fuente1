@@ -15,6 +15,7 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table(name="car")
+//clase mapea car
 public class Car implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
