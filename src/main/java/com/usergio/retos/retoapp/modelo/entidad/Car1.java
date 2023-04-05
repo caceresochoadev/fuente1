@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import java.util.List;
+
 import java.io.Serializable;
 
 @AllArgsConstructor
@@ -16,7 +16,7 @@ import java.io.Serializable;
 @Entity
 @Table(name="car")
 //clase mapea car
-public class Car implements Serializable {
+public class Car1 implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCar;
@@ -29,13 +29,4 @@ public class Car implements Serializable {
     @JoinColumn(name="gamaId")
     @JsonIgnoreProperties("cars")
     private Gama gama;
-
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
-    @JsonIgnoreProperties({"car","client"})
-    private List<Message> messages;
-
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
-    @JsonIgnoreProperties({"car","messages"})
-    public List<Reservation> reservations;
-
 }
